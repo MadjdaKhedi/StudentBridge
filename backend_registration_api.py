@@ -4,8 +4,23 @@ from typing import Optional
 import shutil
 import os
 from fastapi import FastAPI
+from fastapi.responses import HTMLResponse
 
 app = FastAPI()
+
+@app.get("/", response_class=HTMLResponse)
+def root():
+    return """
+    <html>
+        <head>
+            <title>StudentBridge</title>
+        </head>
+        <body>
+            <h1>Welcome to StudentBridge!</h1>
+            <p>Your registration system is online 🚀</p>
+        </body>
+    </html>
+    """
 
 @app.get("/")
 def read_root():
