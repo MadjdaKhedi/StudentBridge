@@ -3,8 +3,13 @@ from fastapi.middleware.cors import CORSMiddleware
 from typing import Optional
 import shutil
 import os
+from fastapi import FastAPI
 
 app = FastAPI()
+
+@app.get("/")
+def read_root():
+    return {"message": "StudentBridge backend is running!"}
 
 # CORS for local development with React
 app.add_middleware(
