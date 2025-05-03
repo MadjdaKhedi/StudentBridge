@@ -3,7 +3,6 @@ from fastapi.middleware.cors import CORSMiddleware
 from typing import Optional
 import shutil
 import os
-from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 
 app = FastAPI()
